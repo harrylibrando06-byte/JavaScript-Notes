@@ -595,6 +595,23 @@ function golfScore(par, stroke) {
 *it will mutate the array instead of returning a new array.
 
 *here is the basic syntax
+array.splice(startIndex, itemsToRemove, item1, item2)
+*start index - specifies the index at which to begin modifying the array.
+*itemsToRemove is an optional parameter indicating how many elements to remove.
+*If itemsToRemove is omitted, splice will remove all elements from startIndex to the end of the array.
+startIndex specifies the index at which to begin modifying the array, while itemsToRemove is an optional parameter indicating how many elements to remove. If itemsToRemove is omitted, splice() will remove all elements from startIndex to the end of the array. The subsequent parameters (item1, item2, and so on) are the elements to be added to the array, beginning at the start index.
 
 
+/* includes()
+-to check if an arrays hold a specific values.
+-includes(valueToCheck, optionalStartingPoint)
+-includes used ===(strict equality)
+
+/* shallow copy of an array. 
+-concat() method. This method creates a new array by merging two or more arrays.
+-concat pulls the elements out and puts them into a new flat array. The empty array [] is just the starting container — it receives all the copied elements.
+
+* slice() method
+-if no arguments it will return shallow copy of the whole array
+-
 */
