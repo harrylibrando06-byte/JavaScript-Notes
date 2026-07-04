@@ -581,6 +581,8 @@ function golfScore(par, stroke) {
 }
 //  console.log(golfScore(2, 3))
 
+// 7/2/2026 =======================================================================================
+
 /* IndexOfMethod 
 * to find the first element inside an array.
 * if the element cannot be found then it will return -1.
@@ -613,5 +615,54 @@ startIndex specifies the index at which to begin modifying the array, while item
 
 * slice() method
 -if no arguments it will return shallow copy of the whole array
--
+
+* (...) spread operator 
+- example: 
+const originalArray = [1, 2, 3];
+const copyArray = [...originalArray];
+
+In summary, shallow copies of arrays can be easily created using methods like concat(), slice(), or the spread operator. These methods are useful for creating new arrays that can be manipulated independently of the original array.
+
+
+*javascript review
+-to access an array: array[index], it will return undefined if nothing was found.
+-length property: this property used to return the number of items in an array. example {
+const developers = ["Jessica", "Naomi", "Tom"];
+console.log(developers.length) // 3
+}
+
+Accessing Elements From Arrays: To access elements from an array, you will need to reference the array followed by its index number inside square brackets.
+
+example code: 
+const developers = ["Jessica", "Naomi", "Tom"];
+console.log(developers[0]) // "Jessica"
+console.log(developers[1]) // "Naomi"
+
+console.log(developers[10]) // undefined
+
+
+length Property: This property is used to return the number of items in an array.
+const developers = ["Jessica", "Naomi", "Tom"];
+console.log(developers.length) // 3
+
+
+Array Destructuring: 
+const fruits = ["apple", "banana", "orange"];
+
+const [first, second, third] = fruits;
+
+console.log(first); // "apple"
+console.log(second); // "banana"
+console.log(third); // "orange"
+
+
+Rest Syntax:
+const fruits = ["apple", "banana", "orange", "mango", "kiwi"];
+const [first, second, ...rest] = fruits;
+
+console.log(first); // "apple"
+console.log(second); // "banana"
+console.log(rest); // ["orange", "mango", "kiwi"]
+
+
 */
