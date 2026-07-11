@@ -666,3 +666,25 @@ console.log(rest); // ["orange", "mango", "kiwi"]
 
 
 */
+
+/*  ================================Object in javascript=========================================== */
+// 7-11-2026
+
+//object is like a cabinet
+
+const objectExample = {
+  propertyName: "value",
+};
+
+const objectPerson = {
+  name: "alice",
+  age: 18,
+  city: "cidade de deus",
+  "the quick brown fox": "jumps over the lazy dog",
+};
+
+//how to access a object properties, there are two ways: dot notation and bracket notation
+
+console.log(objectPerson.name);
+console.log(objectPerson["age"]);
+console.log(objectPerson["the quick brown fox"]);
