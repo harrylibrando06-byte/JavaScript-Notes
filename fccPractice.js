@@ -688,3 +688,46 @@ const objectPerson = {
 console.log(objectPerson.name);
 console.log(objectPerson["age"]);
 console.log(objectPerson["the quick brown fox"]);
+
+const obPer = {
+  name: "Bobet",
+  age: 30,
+  city: "pampanga",
+};
+
+const { name, ...natitira } = obPer;
+
+console.log(natitira);
+
+let propertyName = "name";
+
+console.log(obPer[propertyName]); // 'Bobet'
+
+//how to delete an object
+delete obPer.name;
+console.log(obPer["name"]); // undefined
+
+//question: what is destructuring
+
+// How to Check If an Object Has a Property?
+
+// Let's start with the hasOwnProperty() method: it returns boolean
+//example
+
+const propPerson = {
+  name: "bogart",
+  age: 6,
+  city: "lb liquors",
+};
+
+// console.log(propPerson.hasOwnProperty("name")); // true
+// console.log(propPerson.hasOwnProperty("alcohol")); //false
+
+//hasOwnProperty() it's use if an object has a specific property
+
+// object.hasOwn() is the modern version.
+//syntax is: object.hasOwn(object, propertyName)
+// example
+
+console.log(Object.hasOwn(propPerson, "age")); // true
+console.log(Object.hasOwn(propPerson, "job")); // false
