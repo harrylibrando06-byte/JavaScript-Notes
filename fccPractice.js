@@ -731,3 +731,55 @@ const propPerson = {
 
 console.log(Object.hasOwn(propPerson, "age")); // true
 console.log(Object.hasOwn(propPerson, "job")); // false
+// object.hasOwn() only check if the property exist, that means it still return true if the value is 0, null, undefined
+
+let user = {
+  name: "chigibogs",
+  score: 0,
+  isActive: false,
+  nickname: null,
+};
+
+// Object.hasOwn() correctly reports these all exist
+console.log(Object.hasOwn(user, "nickname")); //true (value is null, but property exists)
+console.log(Object.hasOwn(user, "score")); //true (value is 0, but property exists)
+console.log(Object.hasOwn(user, "isActive")); //true (value is false, but property exists)
+console.log(Object.hasOwn(user, "email")); //true (property was never added)
+
+// Danger! Using if() directly gives wrong results for falsy values
+if (user.score) {
+  // console.log('has score'); //this will not print even though score exist
+}
+
+// Safe! Object.hasOwn() gives correct result
+if (Object.hasOwn(user, "score")) {
+  console.log("has score:", user.score); // Has score: 0
+}
+
+// another way to check for an existence of a property in an object is to use in operator
+//example:
+
+let fused = {
+  nel: "tex",
+  san: "dugo",
+};
+
+console.log("nel" in fused); //true
+//basically it's means is there a nel 'in' fused = true
+
+function person() {
+  return {
+    name: "alice",
+    age: 18,
+    contact: {
+      email: "alice@example.com",
+      phone: {
+        home: "123-456-789",
+        work: "398-765-4321",
+      },
+    },
+  };
+}
+
+console.log(person().contact.phone.home); //'123-456-789'
+console.log(person()["contact"]["phone"]["work"]);
