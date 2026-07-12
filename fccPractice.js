@@ -783,3 +783,66 @@ function person() {
 
 console.log(person().contact.phone.home); //'123-456-789'
 console.log(person()["contact"]["phone"]["work"]);
+
+//Now, let’s take a look at how we can access data where one of the object properties has the value of an array.
+function modifiedPerson() {
+  return {
+    name: "Alice",
+    age: 30,
+    addresses: [
+      { type: "home", street: "123 Main St", city: "Anytown" },
+      { type: "work", street: "67 gabort St", city: "Workville" },
+    ],
+  };
+}
+
+// console.log(modifiedPerson().addresses[1].city); // 'Workville'
+// console.log(modifiedPerson().addresses[0].city); // 'Anytown'
+
+/* What Is the Difference Between Primitive and Non-Primitive Data Types?
+-primitive data types include: bigInt, number, string, boolean, null, undefined, and symbol.
+-These types are called "primitive" because they represent single values and are not objects. 
+
+-Non-primitive data types on the other hand 
+ -In JavaScript, these are objects, which include regular objects, arrays, and functions. Unlike primitives, non-primitive types can hold multiple values as properties or elements.
+example: 
+let num1 = 5;
+let num2 = num1;
+num1 = 10;
+
+console.log(num2); // 5
+-In this example, we are assigning a primitive value (5) from num1 to num2. This creates an independent copy of the value. As a result, any changes made to the original variable (num1) do not affect the copy (num2).
+
+example:
+const originalPerson = { name: "John", age: 30 };
+const copiedPerson = originalPerson;
+
+originalPerson.age = 31;
+
+console.log(copiedPerson.age); // 31
+*/
+
+// What Is the Difference Between Functions and Object Methods?
+
+function gReet(name) {
+  return `Hello ${name}!`;
+}
+console.log(gReet("alice")); // 'Hello alice!'
+
+const peRson = {
+  name: "bob",
+  age: 25,
+  sayHello: function (name) {
+    return `Hello my name is ${name} ${this.name}`;
+  },
+};
+console.log(peRson.sayHello("king"));
+//this refers to the object that owns the method — in this case, peRson
+
+/* What Is the Object() Constructor, and When Should You Use It?
+-In JavaScript, a constructor is a special type of function used to create and initialize objects. It is invoked with the new keyword and can initialize properties and methods on the newly created object. */
+
+const numForObj = 42;
+const objNum = Object(numForObj); // create a wrapper for the number
+console.log(objNum); // 42
+console.log(typeof objNum); // 'object'
