@@ -685,9 +685,9 @@ const objectPerson = {
 
 //how to access a object properties, there are two ways: dot notation and bracket notation
 
-console.log(objectPerson.name);
-console.log(objectPerson["age"]);
-console.log(objectPerson["the quick brown fox"]);
+// console.log(objectPerson.name); // alice
+// console.log(objectPerson["age"]); // 18
+// console.log(objectPerson["the quick brown fox"]); // jumps over the lazy dog
 
 const obPer = {
   name: "Bobet",
@@ -697,15 +697,15 @@ const obPer = {
 
 const { name, ...natitira } = obPer;
 
-console.log(natitira);
+// console.log(natitira);
 
 let propertyName = "name";
 
-console.log(obPer[propertyName]); // 'Bobet'
+// console.log(obPer[propertyName]); // 'Bobet'
 
 //how to delete an object
 delete obPer.name;
-console.log(obPer["name"]); // undefined
+// console.log(obPer["name"]); // undefined
 
 //question: what is destructuring
 
@@ -729,8 +729,8 @@ const propPerson = {
 //syntax is: object.hasOwn(object, propertyName)
 // example
 
-console.log(Object.hasOwn(propPerson, "age")); // true
-console.log(Object.hasOwn(propPerson, "job")); // false
+// console.log(Object.hasOwn(propPerson, "age")); // true
+// console.log(Object.hasOwn(propPerson, "job")); // false
 // object.hasOwn() only check if the property exist, that means it still return true if the value is 0, null, undefined
 
 let user = {
@@ -741,10 +741,10 @@ let user = {
 };
 
 // Object.hasOwn() correctly reports these all exist
-console.log(Object.hasOwn(user, "nickname")); //true (value is null, but property exists)
-console.log(Object.hasOwn(user, "score")); //true (value is 0, but property exists)
-console.log(Object.hasOwn(user, "isActive")); //true (value is false, but property exists)
-console.log(Object.hasOwn(user, "email")); //true (property was never added)
+// console.log(Object.hasOwn(user, "nickname")); //true (value is null, but property exists)
+// console.log(Object.hasOwn(user, "score")); //true (value is 0, but property exists)
+// console.log(Object.hasOwn(user, "isActive")); //true (value is false, but property exists)
+// console.log(Object.hasOwn(user, "email")); //true (property was never added)
 
 // Danger! Using if() directly gives wrong results for falsy values
 if (user.score) {
@@ -753,7 +753,7 @@ if (user.score) {
 
 // Safe! Object.hasOwn() gives correct result
 if (Object.hasOwn(user, "score")) {
-  console.log("has score:", user.score); // Has score: 0
+  // console.log("has score:", user.score); // Has score: 0
 }
 
 // another way to check for an existence of a property in an object is to use in operator
@@ -764,7 +764,7 @@ let fused = {
   san: "dugo",
 };
 
-console.log("nel" in fused); //true
+// console.log("nel" in fused); //true
 //basically it's means is there a nel 'in' fused = true
 
 function person() {
@@ -781,10 +781,10 @@ function person() {
   };
 }
 
-console.log(person().contact.phone.home); //'123-456-789'
-console.log(person()["contact"]["phone"]["work"]);
+// console.log(person().contact.phone.home); //'123-456-789'
+// console.log(person()["contact"]["phone"]["work"]);
 
-//Now, let’s take a look at how we can access data where one of the object properties has the value of an array.
+//Now, let's take a look at how we can access data where one of the object properties has the value of an array.
 function modifiedPerson() {
   return {
     name: "Alice",
@@ -827,7 +827,7 @@ console.log(copiedPerson.age); // 31
 function gReet(name) {
   return `Hello ${name}!`;
 }
-console.log(gReet("alice")); // 'Hello alice!'
+// console.log(gReet("alice")); // 'Hello alice!'
 
 const peRson = {
   name: "bob",
@@ -836,7 +836,7 @@ const peRson = {
     return `Hello my name is ${name} ${this.name}`;
   },
 };
-console.log(peRson.sayHello("king"));
+// console.log(peRson.sayHello("king"));
 //this refers to the object that owns the method — in this case, peRson
 
 /* What Is the Object() Constructor, and When Should You Use It?
@@ -844,8 +844,8 @@ console.log(peRson.sayHello("king"));
 
 const numForObj = 42;
 const objNum = Object(numForObj); // create a wrapper for the number
-console.log(objNum); // 42
-console.log(typeof objNum); // 'object'
+// console.log(objNum); // 42
+// console.log(typeof objNum); // 'object'
 
 const tiger = {
   species: "Tiger",
@@ -863,45 +863,45 @@ const getSpecies = (animal) => {
   return animal.species;
 };
 
-console.log(getSpecies(tiger));
+// console.log(getSpecies(tiger));
 
 const getAge = (animal) => {
   return animal.age;
 };
 
-console.log(getAge(tiger));
+// console.log(getAge(tiger));
 
 const addHabitat = (animal, habitat) => {
   animal.habitat = habitat;
   return animal;
 };
 
-console.log(addHabitat(tiger, "Rainforest"));
+// console.log(addHabitat(tiger, "Rainforest"));
 
 const updateAge = (animal, newAge) => {
   animal.age = newAge;
   return animal;
 };
 
-console.log(updateAge(elephant, 12));
+// console.log(updateAge(elephant, 12));
 
 const removeEndangeredStatus = (animal) => {
   delete animal.isEndangered;
   return animal;
 };
 
-console.log(removeEndangeredStatus(tiger));
+// console.log(removeEndangeredStatus(tiger));
 
 const hasHabitat = (animal) => {
   return animal.hasOwnProperty("habitat");
 };
 
-console.log(hasHabitat(tiger));
-console.log(hasHabitat(elephant));
+// console.log(hasHabitat(tiger));
+// console.log(hasHabitat(elephant));
 
 const getProperty = (animal, propertyName) => {
   return animal[propertyName];
 };
 
-console.log(getProperty(tiger, "species"));
-console.log(getProperty(elephant, "age"));
+// console.log(getProperty(tiger, "species"));
+// console.log(getProperty(elephant, "age"));
