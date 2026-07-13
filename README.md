@@ -4,13 +4,13 @@ My long javascript notes where I take notes from FreeCodeCamp lessons to strengt
 
 ## Folder Structure
 javascript-notes/
-├── 01-math-and-random/ ← Math object, random numbers, fortune teller
-├── 02-conditionals/ ← switch statements, if/else, ternary operator
-├── 03-functions/ ← declarations, expressions, arrow functions, scope, calculator
-├── 04-strings/ ← string methods, maskEmail, truncateString
-├── 05-arrays/ ← array methods, destructuring, rest syntax, chessboard
-├── 06-objects/ ← dot/bracket notation, hasOwnProperty, this, constructors
-└── 07-projects/ ← shopping list, lunch picker, golf score, card counter, leap year, wildlife tracker
+- ├── **01-math-and-random**/ ← Math object, random numbers, fortune teller
+- ├── **02-conditionals**/ ← switch statements, if/else, ternary operator
+- ├── **03-functions**/ ← declarations, expressions, arrow functions, scope, calculator
+- ├── **04-strings**/ ← string methods, maskEmail, truncateString
+- ├── **05-arrays**/ ← array methods, destructuring, rest syntax, chessboard
+- ├── **06-objects**/ ← dot/bracket notation, hasOwnProperty, this, constructors
+- └── **07-projects**/ ← shopping list, lunch picker, golf score, card counter, leap year, wildlife tracker
 
 ## What This Repo Contains
 
