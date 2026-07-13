@@ -1,6 +1,6 @@
 # JavaScript Notes 
 
-A personal, unfiltered notebook documenting my journey learning JavaScript from the ground up. This is where I experiment, break things, fix them, and build understanding — one concept at a time.
+My long javascript notes where I take notes from FreeCodeCamp lessons to strengthen what I am learning so I can avoid tutorial hell or learning shallowly.
 
 ## What This Repo Contains
 
