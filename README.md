@@ -36,8 +36,13 @@ javascript-notes/
 
 - Task Counter & Break Suggestion
 - Lunch Picker Program
+- Shopping List
+- Simple Grader
+- Card Counter
 - Golf Score Translator
 - Wildlife Tracker
+  
+  
   
 ## Tools I Use
 
@@ -51,6 +56,9 @@ javascript-notes/
 ## Why Is It here? 
 
 Just for me to take notes and have green streaks in github, or you can say to track my progress.
+
+## Last thing..
+- I have a large file named `fccPractice.js` it is actually where all this folder and file came from, it's just I had trouble naming things in a one big file so I organized them and will keep doing it till the end of this journey. Note I will not going to delete that folder, it will be the reminder that I kept doing something even if I have so many important things to do beside programming. 
 
 ## Author
 
