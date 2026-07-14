@@ -6,11 +6,11 @@ function booWho(boolean) {
     return false;
   }
 }
-// console.log(booWho(true));        // true
-// console.log(booWho(false));       // true
-// console.log(booWho([1, 2, 3]));   // false
-// console.log(booWho(NaN));         // false
-// console.log(booWho("true"));      // false
+console.log(booWho(true)); // true
+console.log(booWho(false)); // true
+console.log(booWho([1, 2, 3])); // false
+console.log(booWho(NaN)); // false
+console.log(booWho("true")); // false
 
 function maskEmail(email) {
   let atIndex = email.indexOf("@");
@@ -21,8 +21,8 @@ function maskEmail(email) {
   let domain = email.slice(atIndex); // Fixed: slicing at index position
   return strStart + asterisk + strEnd + domain;
 }
-// console.log(maskEmail("apple.pie@example.com"));
-// console.log(maskEmail("user@domain.org"));
+console.log(maskEmail("apple.pie@example.com"));
+console.log(maskEmail("user@domain.org"));
 
 function truncateString(string, length) {
   if (string.length > length) {
@@ -32,4 +32,4 @@ function truncateString(string, length) {
     return string;
   }
 }
-// console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11))
+console.log(truncateString("Peter Piper picked a peck of pickled peppers", 11));
