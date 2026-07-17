@@ -236,3 +236,34 @@ const getProperty = (animal, propertyName) => {
 
 // console.log(getProperty(tiger, "species"));
 // console.log(getProperty(elephant, "age"));
+
+/* Working with JSON ==============================================================================
+-JSON stands for JavaScript Object Notation
+-Lightweight, text-based data format
+-commonly used to exchange data between a server and web app
+
+##How Do JSON.parse() and JSON.stringify() Work?
+-There are two powerful methods in JavaScript for handling JSON data: JSON.parse() and JSON.stringify(). These methods are commonly used to convert between JSON strings and JavaScript objects.
+-JSON.stringify() used to convert JavaScript object into JSON string
+*/
+
+// Example for JSON.stringify()
+const fuse = {
+  prong: 3,
+  material: "copper",
+  outler: 4,
+};
+
+const stringify = JSON.stringify(fuse);
+
+console.log(stringify);
+
+const developerObj = {
+  firstName: "Jessica",
+  isAwesome: true,
+  isMusician: true,
+  country: "USA",
+};
+
+console.log(JSON.stringify(developerObj, ["firstName", "country"]));
+// In this example, we have a developerObj with four properties. When we use the JSON.stringify() method, we can pass in an array for the second parameter and specify which properties we want stringified. The result will be a stringified object containing only the firstName and country properties.
