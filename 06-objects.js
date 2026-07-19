@@ -267,3 +267,5 @@ const developerObj = {
 
 console.log(JSON.stringify(developerObj, ["firstName", "country"]));
 // In this example, we have a developerObj with four properties. When we use the JSON.stringify() method, we can pass in an array for the second parameter and specify which properties we want stringified. The result will be a stringified object containing only the firstName and country properties.
+
+// another optional parameter for stringify would be the spacer parameter
