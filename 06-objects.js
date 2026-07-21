@@ -282,7 +282,7 @@ console.log(jasonObj);
 //What is an optional chaining '?.' and how does it work?
 // optional chaining "?." let you access a object properties safely without worrying if they exist
 
-const user = {
+const jB = {
   name: "Jordan Banayad",
   profile: {
     email: "jordanBanayad@gmail.com",
@@ -293,4 +293,5 @@ const user = {
   },
 };
 
-console.log(user?.profile?.address?.street);
+console.log(jB?.profile?.address?.street);
+console.log(jB?.profile?.phone?.number);
