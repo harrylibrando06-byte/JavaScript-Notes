@@ -278,3 +278,19 @@ Heres how to work with JSON.parse()*/
 const jsonString = '{"name":"John","age":30,"isAdmin":true}';
 const jasonObj = JSON.parse(jsonString);
 console.log(jasonObj);
+
+//What is an optional chaining '?.' and how does it work?
+// optional chaining "?." let you access a object properties safely without worrying if they exist
+
+const user = {
+  name: "Jordan Banayad",
+  profile: {
+    email: "jordanBanayad@gmail.com",
+    address: {
+      street: "123 Main St",
+      city: "somewhere",
+    },
+  },
+};
+
+console.log(user?.profile?.address?.street);
