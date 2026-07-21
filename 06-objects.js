@@ -295,3 +295,35 @@ const jB = {
 
 console.log(jB?.profile?.address?.street);
 console.log(jB?.profile?.phone?.number);
+
+// What is Object destructuring, and how does it work?
+// -Object destructuring allows you to extract value from objects and assign then to variables.
+
+const personDes = { namid: "banayad", age: 32, city: "New Bork" };
+const { namid, age } = personDes;
+
+console.log(namid);
+console.log(age);
+// Destructuring can simplify your code, especially when working with complex objects or when you need to extract multiple values at once.
+
+const weirdObj = {
+  cabbage: "green",
+  noodles: 42,
+  spaceship: "falcon",
+  guitar: "fender",
+  pancake: true,
+  thunder: false,
+  jellybean: "strawberry",
+  moonlight: 99,
+};
+
+const {
+  cabbage: gulay,
+  spaceship: sasakyan,
+  pancake: almusal,
+  jellybean: jelly,
+} = weirdObj;
+console.log(gulay); // "green"
+console.log(sasakyan); // "falcon"
+console.log(almusal); // true
+console.log(jelly);
