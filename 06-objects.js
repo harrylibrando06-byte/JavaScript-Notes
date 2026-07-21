@@ -271,3 +271,10 @@ console.log(JSON.stringify(developerObj, ["firstName", "country"]));
 
 // another optional parameter for stringify would be the spacer parameter, this allows you to control the spacing for the stringified result
 console.log(JSON.stringify(developerObj, null, 2));
+
+/* Another method you will be using a lot is JSON.parse() 
+-JSON.parse() converts a JSON string back to a javascript object
+Heres how to work with JSON.parse()*/
+const jsonString = '{"name":"John","age":30,"isAdmin":true}';
+const jasonObj = JSON.parse(jsonString);
+console.log(jasonObj);
