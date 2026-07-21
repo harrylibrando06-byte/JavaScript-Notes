@@ -58,3 +58,18 @@ const validateManifest = (manifest) => {
 
   return problems;
 };
+
+const processManifest = (manifest) => {
+  const validate = validateManifest(manifest);
+  const normalize = normalizeUnits(manifest);
+
+  if (Object.keys(validate).length === 0) {
+    console.log(`Validation success: ${manifest.containerId}`);
+    console.log(`Total weight: ${normalize?.weight} kg`);
+  } else {
+    console.log(`Validation error: ${manifest.containerId}`);
+    console.log(validate);
+  }
+};
+
+processManifest({ containerId: -88, destination: "Soledad", weight: NaN });
