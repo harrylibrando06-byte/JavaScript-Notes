@@ -21,3 +21,15 @@ const recipe2 = {
   totalIngredients: null,
   difficultyLevel: "",
 };
+
+const recipe3 = {
+  name: "Vegetable Stir Fry",
+  ingredients: ["broccoli", "carrot", "bell pepper"],
+  cookingTime: 15,
+  totalIngredients: null,
+  difficultyLevel: "",
+};
+
+recipes.push(recipe1, recipe2, recipe3);
+
+const getTotalIngredients = (array) => {};
