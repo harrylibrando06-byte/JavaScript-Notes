@@ -1,5 +1,5 @@
 const questions = [
-  //
+  // The instruction says, create a 5 object with 4 keys.
   {
     category: "Movies",
     question: "Who directed Parasite?",
@@ -36,3 +36,13 @@ const questions = [
     answer: "Magellan",
   },
 ];
+
+const getRandomQuestion = (question) => {
+  let randomNum = Math.floor(Math.random() * question.length);
+  return question[randomNum];
+};
+
+const getRandomComputerChoice = (choices) => {
+  let randomAnswers = Math.floor(Math.random() * choices.length);
+  return choices[randomAnswers];
+};
