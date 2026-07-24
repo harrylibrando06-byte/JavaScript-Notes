@@ -46,3 +46,11 @@ const getRandomComputerChoice = (choices) => {
   let randomAnswers = Math.floor(Math.random() * choices.length);
   return choices[randomAnswers];
 };
+
+const getResults = (questions, compChoice) => {
+  if (questions.answer === compChoice) {
+    return "The computer's choice is correct!";
+  } else {
+    return `The computer's choice is wrong. The correct answer is: ${questions.answer}`;
+  }
+};
