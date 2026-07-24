@@ -327,3 +327,19 @@ console.log(gulay); // "green"
 console.log(sasakyan); // "falcon"
 console.log(almusal); // true
 console.log(jelly);
+
+// quick exercise:
+const loginRequest = {
+  ipAddress: "192.168.1.50",
+  enteredPassword: "password123",
+  isBot: true,
+};
+
+// 1. Check if the request is from a bot
+if (loginRequest.isBot === true) {
+  console.log("Access Denied: Bot detected!");
+} else {
+  // 2. Else validate the password and accept the IP
+  console.log(`Validating password for IP: ${loginRequest.ipAddress}`);
+  // (Password validation logic would go here)
+}
