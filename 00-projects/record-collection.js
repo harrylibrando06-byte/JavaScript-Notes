@@ -19,14 +19,15 @@ const recordCollection = {
 };
 
 const updateRecords = (records, id, prop, value) => {
-  if (value !== "") {
-    value = prop;
-  } else if (
-    (prop === tracks && value !== "") ||
-    !Object.hasOwn(id, "tracks")
-  ) {
-    let arr = [];
-    arr += value;
+  if (value === "") {
+    delete records[id][prop];
+    return records;
+  }
+  if (prop === "tracks") {
+    if (!records[id].hasOwnProperty("tracks")) {
+      records[id].tracks = [];
+    }
+    records[id].tracks.push(value);
   } else if (prop === tracks && value !== "") {
     records.tracks;
   }
