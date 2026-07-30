@@ -23,13 +23,18 @@ const updateRecords = (records, id, prop, value) => {
     delete records[id][prop];
     return records;
   }
+
+  if (prop !== "tracks" && value !== "") {
+    records[id][prop] = value;
+  }
+
   if (prop === "tracks") {
-    if (!records[id].hasOwnProperty("tracks")) {
+    if (value !== "" && !Object.hasOwn(records[id], "tracks")) {
       records[id].tracks = [];
     }
-    records[id].tracks.push(value);
-  } else if (prop === tracks && value !== "") {
-    records.tracks;
+    if (value !== "") {
+      records[id][prop].push(value);
+    }
   }
   return records;
 };
