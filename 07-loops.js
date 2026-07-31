@@ -123,3 +123,36 @@ for (const prop in personIn) {
 // If the condition is true, we nest another for...in loop that will loop over the properties of the nested object and log the value to the console.
 
 // The nestedProp variable represents the current property of the nested object.
+
+/* What Is a While Loop, and How Does It Differ from the Do...while Loop? =========================
+- A while loop will execute a block of code as long as the condition is true. Here is the basic syntax:
+
+while (condition) {
+code block to be executed
+}
+
+- While loop is important if you do not know how many times you need to run a block of code.
+*/
+
+// Example;
+let counter = 0;
+while (counter <= 5) {
+  console.log(counter);
+  counter++;
+}
+
+/* Another loop similar to the while loop would be the do...while loop. Here is the basic syntax:
+do {
+    code block to be executed
+} while (condition);
+*/
+// One key difference between a do...while loop and a while loop is that the do...while loop will execute the block of code at least once before checking the condition. Example of a do...while loop:
+
+let counterD = 0;
+
+do {
+  console.log(counterD);
+  counterD++;
+} while (counterD < 5);
+
+// while loop will check the condition first, if it's true it will execute the code block, the do...while loop will execute first the code block then just check the condition, if it's true it will execute the code block again.
