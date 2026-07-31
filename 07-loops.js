@@ -59,3 +59,67 @@ const people = [
 for (const person of people) {
   console.log(`${person.name} is ${person.age} years old`);
 }
+
+/* What Is the For...in Loop, and When Should You Use It? =========================================
+- A for...in loop is best used when you need to loop over the properties of an object.
+- Here is the basic syntax for for...in loop: 
+
+for (variable in object) {
+    code block to be executed;
+};
+
+- The variable in the example is the current object property that is being looped over.
+*/
+// Example:
+
+const fruit = {
+  name: "apple",
+  color: "red",
+  price: 0.99,
+};
+
+for (const prop in fruit) {
+  console.log(fruit[prop]);
+}
+
+// Example
+const personIn = {
+  name: "John",
+  age: 30,
+  address: {
+    street: "123 Main St",
+    city: "Anytown",
+    state: "CA",
+  },
+};
+
+for (const prop in personIn) {
+  console.log(personIn[prop]);
+}
+// The address property is an object itself. The for...in loop will also loop over the properties of the person object and log the entire address object to the console.
+// If you want to loop over the properties of the address object, you can nest another for...in loop inside the first one.
+
+const isObject = (obj) => {
+  return typeof obj === "object" && !Array.isArray(obj) && obj !== null;
+};
+
+for (const prop in personIn) {
+  if (isObject(personIn[prop])) {
+    for (const nestedProp in personIn[prop]) {
+      console.log(personIn[prop][nestedProp]);
+    }
+  } else {
+    console.log(personIn[prop]);
+  }
+}
+// In this example, we have a custom function isObject that checks if the value is an object.
+
+// The Array.isArray method is used to check if the value is an array. By placing the logical NOT operator (!) in front of the method, we are checking if the value is not an array.
+
+// The reason why we can't just use typeof equals 'object' is because arrays are also considered objects in JavaScript. We want to exclude arrays from the check.
+
+// Also, due to a historical bug in JavaScript, typeof null returns 'object'. So we want to also exclude null values from the check.
+
+// If the condition is true, we nest another for...in loop that will loop over the properties of the nested object and log the value to the console.
+
+// The nestedProp variable represents the current property of the nested object.
