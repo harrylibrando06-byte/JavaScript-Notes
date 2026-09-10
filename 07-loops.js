@@ -156,3 +156,33 @@ do {
 } while (counterD < 5);
 
 // while loop will check the condition first, if it's true it will execute the code block, the do...while loop will execute first the code block then just check the condition, if it's true it will execute the code block again.
+
+/* What Are the Break and Continue Statements Used for in Loops? ==================================
+- A *break* statement is used to exit a loop early, while *continue* statement is used to skip the current iteration of a loop and move to the next one. Here is an example of using *break* statement:
+*/
+
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i);
+}
+
+// Example of a *continue* statement:
+for (let i = 0; i <= 10; i++) {
+  if (i === 6) {
+    continue;
+  }
+  console.log(i);
+}
+
+// Another thing you can do with *break* and *continue* statement is to use labels to specify which loop you want to break or continue.
+
+outerLoop: for (let i = 0; i < 3; i++) {
+  innerLoop: for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      break outerLoop;
+    }
+    console.log(`i: ${i}, j: ${j}`);
+  }
+}
