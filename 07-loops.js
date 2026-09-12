@@ -186,3 +186,8 @@ outerLoop: for (let i = 0; i < 3; i++) {
     console.log(`i: ${i}, j: ${j}`);
   }
 }
+
+//I stopped coding for 1 month, due to lack of money for electricity bill and I got busy with school and I procrastinate a lot. This is a review from where I left off.
+for (let b; b <= 10; b++) {
+  console.log(b);
+}
