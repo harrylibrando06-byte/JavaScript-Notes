@@ -188,6 +188,34 @@ outerLoop: for (let i = 0; i < 3; i++) {
 }
 
 //I stopped coding for 1 month, due to lack of money for electricity bill and I got busy with school and I procrastinate a lot. This is a review from where I left off.
-for (let b; b <= 10; b++) {
+for (let b = 0; b <= 10; b++) {
   console.log(b);
 }
+
+function printCharacters(str) {
+  for (const char of str) {
+    console.log(char);
+  }
+}
+printCharacters("hello");
+
+function getMatchedWordCount(sentence, match) {
+  let count = 0;
+
+  for (const word of sentence) {
+    console.log(
+      `Checking "${word}" against "${match}" | Running count: "${count}"`,
+    );
+  }
+
+  return count;
+}
+
+console.log(
+  getMatchedWordCount(
+    ["I", "really", "really", "really", "like", "to", "code"],
+    "really",
+  ),
+);
+
+getMatchedWordCount(["foo"], "bar");
