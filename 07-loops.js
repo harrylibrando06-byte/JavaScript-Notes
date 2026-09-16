@@ -192,6 +192,14 @@ for (let b = 0; b <= 10; b++) {
   console.log(b);
 }
 
+// word counter
+function printCharacters(str) {
+  for (const char of str) {
+    console.log(char);
+  }
+}
+printCharacters("hello");
+
 function printCharacters(str) {
   for (const char of str) {
     console.log(char);
@@ -203,8 +211,11 @@ function getMatchedWordCount(sentence, match) {
   let count = 0;
 
   for (const word of sentence) {
+    if (word === match) {
+      count++;
+    }
     console.log(
-      `Checking "${word}" against "${match}" | Running count: "${count}"`,
+      `Checking "${word}" against "${match}" | Running count: ${count}`,
     );
   }
 
@@ -218,4 +229,6 @@ console.log(
   ),
 );
 
-getMatchedWordCount(["foo"], "bar");
+console.log(
+  getMatchedWordCount(["Do", "not", "fear", "the", "dandy", "lion"], "dandy"),
+);
