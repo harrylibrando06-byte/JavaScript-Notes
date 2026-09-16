@@ -232,3 +232,18 @@ console.log(
 console.log(
   getMatchedWordCount(["Do", "not", "fear", "the", "dandy", "lion"], "dandy"),
 );
+
+//Build a sentence analyzer
+
+const getVowelCount = (sentence) => {
+  let count = 0;
+  let vowel = ["a", "e", "i", "o", "u"];
+  for (const char of sentence) {
+    if (vowel.includes(char.toLowerCase())) {
+      count++;
+    }
+  }
+  return count;
+};
+
+console.log(getVowelCount("Apples are tasty fruits"));
