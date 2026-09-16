@@ -247,3 +247,5 @@ const getVowelCount = (sentence) => {
 };
 
 console.log(getVowelCount("Apples are tasty fruits"));
+const vowelCount = getVowelCount("Apples are tasty fruits");
+console.log(`Vowel Count ${vowelCount}`);
