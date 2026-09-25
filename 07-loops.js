@@ -249,3 +249,42 @@ const getVowelCount = (sentence) => {
 console.log(getVowelCount("Apples are tasty fruits"));
 const vowelCount = getVowelCount("Apples are tasty fruits");
 console.log(`Vowel Count ${vowelCount}`);
+
+// counting punctuation
+
+const getPunctuationCount = (sentence) => {
+  let count = 0;
+  const letters = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+
+  for (const char of sentence) {
+    if (char !== " " && letters.includes(char.toLowerCase())) count++;
+  }
+  return count;
+};
