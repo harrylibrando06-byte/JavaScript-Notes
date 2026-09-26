@@ -297,3 +297,19 @@ const getPunctuationCount = (sentence) => {
 console.log(getPunctuationCount("WHAT?!?!?!?!?"));
 
 // getword count
+
+const getWordCount = (sentence) => {
+  let count = 0;
+  let words = sentence.trim(" ").split(" ");
+
+  for (const char of words) {
+    if (char !== " ") {
+      count++;
+    }
+  }
+  return count;
+};
+
+const wordCount = getWordCount("I love freeCodeCamp");
+
+console.log(wordCount);
