@@ -295,3 +295,5 @@ const getPunctuationCount = (sentence) => {
 };
 
 console.log(getPunctuationCount("WHAT?!?!?!?!?"));
+
+// getword count
