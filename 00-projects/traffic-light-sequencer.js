@@ -33,6 +33,7 @@ const config4 = {
 const runSequence = (config, cycles) => {
   if (config.phases.length === 0) {
     console.log("No phases found");
+    return;
   } else if (config.fault === true) {
     console.log("Faulted phase!");
     return;
