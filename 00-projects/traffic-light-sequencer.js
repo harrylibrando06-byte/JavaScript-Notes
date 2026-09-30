@@ -31,16 +31,18 @@ const config4 = {
 };
 
 const runSequence = (config, cycles) => {
-  for (const i of config.phases) {
-    if (config.phases.lengt === 0) {
-      console.log("No phases found");
-    } else if (config.fault === true) {
-      console.log("Faulted phase!");
-      break;
-    } else if (config.phases.duration <= 0) {
-      console.log("Invalid phase detected");
+  if (config.phases.length === 0) {
+    console.log("No phases found");
+  } else if (config.fault === true) {
+    console.log("Faulted phase!");
+    return;
+  } else if (phases.duration <= 0) {
+    console.log("Invalid phase detected");
+  }
+  for (let c = 0; c < cycles; c++) {
+    for (const phases of config.phases) {
+      console.log(`Switching to ${phases.color} for ${phases.duration} s`);
     }
-    console.log(`Switching to ${config} for ${cycles}`);
   }
 };
 
