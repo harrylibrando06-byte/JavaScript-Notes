@@ -37,12 +37,14 @@ const runSequence = (config, cycles) => {
   } else if (config.fault === true) {
     console.log("Faulted phase!");
     return;
-  } else if (phases.duration <= 0) {
-    console.log("Invalid phase detected");
   }
   for (let c = 0; c < cycles; c++) {
     for (const phases of config.phases) {
-      console.log(`Switching to ${phases.color} for ${phases.duration} s`);
+      if (phases.duration <= 0) {
+        console.log("Invalid phase detected");
+      } else {
+        console.log(`Switching to ${phases.color} for ${phases.duration} s`);
+      }
     }
   }
 };
