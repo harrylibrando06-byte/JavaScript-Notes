@@ -50,3 +50,19 @@ const runSequence = (config, cycles) => {
 };
 
 runSequence(config1, 1);
+
+const generateTimeline = (config, cycles) => {
+  let total = 0;
+  let timestamps = [];
+
+  for (let c = 0; c < cycles; c++) {
+    for (const phases of config.phases) {
+      total += phases.duration;
+      timestamps.push(total);
+    }
+  }
+
+  return timestamps;
+};
+
+console.log(generateTimeline(config1, 1));
