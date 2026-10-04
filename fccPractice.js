@@ -905,3 +905,13 @@ const getProperty = (animal, propertyName) => {
 
 // console.log(getProperty(tiger, "species"));
 // console.log(getProperty(elephant, "age"));
+
+//recreation of missing letter detector
+/*for each index i:
+  find where str[i] is in the alphabet
+  expectedNext = alphabet[that index + 1]
+  actualNext = str[i + 1]
+  
+  if actualNext !== expectedNext:
+    return expectedNext
+*/
