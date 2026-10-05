@@ -27,3 +27,9 @@ const collection = {
 };
 
 // create an function that checks if an artifact is present in the collection object
+const getArtifactTitle = (id) => {
+  const artifact = collection[id];
+  return artifact ? artifact.title : "Artifact not found";
+};
+
+console.log(getArtifactTitle(102));
