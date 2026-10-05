@@ -25,3 +25,5 @@ const collection = {
     onDisplay: false,
   },
 };
+
+// create an function that checks if an artifact is present in the collection object
