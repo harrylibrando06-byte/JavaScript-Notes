@@ -33,3 +33,10 @@ const getArtifactTitle = (id) => {
 };
 
 console.log(getArtifactTitle(102));
+
+const addTag = (id, tag) => {
+  const artifact = collection[id];
+  if (!artifact.includes(artifact.tags)) {
+    artifact.tags[tag];
+  }
+};
