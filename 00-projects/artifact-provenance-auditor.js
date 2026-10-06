@@ -55,3 +55,24 @@ const moveArtifact = (id, gallery, year) => {
     artifact.locations.push({ gallery, year });
   }
 };
+
+moveArtifact(102, "Hall B", 2026);
+console.log(collection[102].locations);
+
+/* Create a toggleDisplayStatus function that takes an id parameter. Look up the artifact using collection[id]. If it exists, set its onDisplay property to the opposite of its current value. */
+
+const toggleDisplayStatus = (id) => {
+  let artifact = collection[id];
+
+  if (artifact) {
+    artifact.onDisplay = !artifact.onDisplay;
+  }
+};
+
+console.log(collection[101].onDisplay);
+toggleDisplayStatus(101);
+console.log(collection[101].onDisplay);
+
+console.log(collection[102].onDisplay);
+toggleDisplayStatus(102);
+console.log(collection[102].onDisplay);
