@@ -45,3 +45,13 @@ const addTag = (id, tag) => {
 
 addTag(101, "royal");
 console.log(collection[101]);
+
+/* Create a moveArtifact function with the parameters id, gallery, and year. Find the artifact using collection[id]. If it exists, push a new object with the gallery and year to its locations array. */
+
+const moveArtifact = (id, gallery, year) => {
+  let artifact = collection[id];
+
+  if (artifact) {
+    artifact.locations.push({ gallery, year });
+  }
+};
