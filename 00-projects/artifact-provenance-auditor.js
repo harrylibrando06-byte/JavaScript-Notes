@@ -40,3 +40,8 @@ const addTag = (id, tag) => {
     artifact.tags.push(tag);
   }
 };
+
+/* New research confirms the Golden Mask belonged to royalty. Add the tag "royal" to the artifact with an id of 101. Then, call console.log() with collection[101].tags to log that artifact's tags. */
+
+addTag(101, "royal");
+console.log(collection[101]);
