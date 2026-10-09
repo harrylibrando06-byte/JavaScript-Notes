@@ -32,3 +32,16 @@ let contacts = [
 // If the function receives a contact name and the property exists on the related contact, then the property's value should be returned.
 // If the name passed to the function does not match any contacts in the contacts array, then the function should return "No such contact".
 // If the property does not exist on a found contact, then the function should return "No such property".
+
+const lookUpProfile = (name, property) => {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i]["firstName"] === name) {
+      if (contacts[i].hasOwnProperty(property)) {
+        return contacts[i][property];
+      } else {
+        return "No such property";
+      }
+    }
+  }
+  return "No such contact";
+};
