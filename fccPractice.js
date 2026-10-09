@@ -935,3 +935,5 @@ console.log(fearNoLetter("abcdefghjklmno")); // "i"
 console.log(fearNoLetter("stvwx")); // "u"
 console.log(fearNoLetter("bcdf")); // "e"
 console.log(fearNoLetter("abcdefghijklmnopqrstuvwxyz")); // undefined
+
+// array.find() method

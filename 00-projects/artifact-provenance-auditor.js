@@ -76,3 +76,15 @@ console.log(collection[101].onDisplay);
 console.log(collection[102].onDisplay);
 toggleDisplayStatus(102);
 console.log(collection[102].onDisplay);
+
+const updateCurator = (id, name) => {
+  let artifact = collection[id];
+
+  if (artifact) {
+    artifact.curator.name = name;
+  }
+};
+
+updateCurator(101, "Fran Sinclair");
+
+console.log(collection[101].curator.name);
