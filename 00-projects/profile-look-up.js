@@ -24,3 +24,11 @@ let contacts = [
     likes: ["JavaScript", "Gaming", "Foxes"],
   },
 ];
+
+// User Stories:
+
+// You should create a function named lookUpProfile that takes a name and a property as arguments.
+// You should retrieve contact information from the provided contacts array.
+// If the function receives a contact name and the property exists on the related contact, then the property's value should be returned.
+// If the name passed to the function does not match any contacts in the contacts array, then the function should return "No such contact".
+// If the property does not exist on a found contact, then the function should return "No such property".
