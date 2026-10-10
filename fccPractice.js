@@ -944,6 +944,32 @@ const greaterThan30 = num.find((num) => num > 30);
 console.log(num.indexOf(greaterThan30));
 
 // need to recreate profile-look-up 10-10-2026
+let contacts = [
+  {
+    firstName: "Akira",
+    lastName: "Laine",
+    number: "0543236543",
+    likes: ["Pizza", "Coding", "Brownie Points"],
+  },
+  {
+    firstName: "Harry",
+    lastName: "Potter",
+    number: "0994372684",
+    likes: ["Hogwarts", "Magic", "Hagrid"],
+  },
+  {
+    firstName: "Sherlock",
+    lastName: "Holmes",
+    number: "0487345643",
+    likes: ["Intriguing Cases", "Violin"],
+  },
+  {
+    firstName: "Kristian",
+    lastName: "Vos",
+    number: "unknown",
+    likes: ["JavaScript", "Gaming", "Foxes"],
+  },
+];
 
 // User Stories:
 
@@ -952,3 +978,16 @@ console.log(num.indexOf(greaterThan30));
 // If the function receives a contact name and the property exists on the related contact, then the property's value should be returned.
 // If the name passed to the function does not match any contacts in the contacts array, then the function should return "No such contact".
 // If the property does not exist on a found contact, then the function should return "No such property".
+
+const lookUpProfile = (name, property) => {
+  for (let i = 0; i < contacts.length; i++) {
+    if (contacts[i]["firstName"] === name) {
+      if (contacts[i].hasOwnProperty(property)) {
+        return contacts[i][property];
+      } else {
+        return "No such property";
+      }
+    }
+    return "No such contact";
+  }
+};
