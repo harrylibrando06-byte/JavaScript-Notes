@@ -8,11 +8,11 @@ Write a function named chunkArrayInGroups that takes an array as first argument 
 
 
 const chunkArrayInGroups = (arr, num) => {
-    let result = [];
-    for (let i = 0; i < arr.length; i += num) {
-        let slice = arr.slice(i, i + num);
-        result.push(slice)
-    };
-    return result;
+  let result = [];
+  for (let i = 0; i < arr.length; i += num) {
+    let slice = arr.slice(i, i + num);
+    result.push(slice)
+  };
+  return result;
 }
-console.log(chunkArrayInGroups(["a", "b", "c", "d"]), 2); 
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2)); 
