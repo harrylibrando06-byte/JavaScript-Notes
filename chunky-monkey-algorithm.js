@@ -31,3 +31,18 @@ tray	capacity	expected boxes
 [0,1,2,3,4,5]	4	[[0,1,2,3],[4,5]]
 [0,1,2,3,4,5,6]	3	[[0,1,2],[3,4,5],[6]]
 ["x","y","z"]	5	[["x","y","z"]] */
+
+const cookiePack = (tray, capacity) => {
+  let cookieBox = [];
+
+  for (let i = 0; i < tray.length; i += capacity) {
+    let sorter = tray.slice(i, i + capacity);
+    cookieBox.push(sorter)
+  }
+
+  return cookieBox;
+}
+
+console.log(cookiePack(["a","b","c","d"],	2));
+console.log(cookiePack([0,1,2,3,4,5],	4));
+console.log(cookiePack([0,1,2,3,4,5,6],	3));
