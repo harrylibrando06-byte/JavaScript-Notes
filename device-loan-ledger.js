@@ -73,3 +73,8 @@ const shelf = {
     returnBy: ""
   }
 };
+
+const shelfToText = (shelf) => shelf.JSON.stringify(shelf);
+const textToShelft = (shelf) => shelf.JSON.parse(shelfToText);
+const shelfDeepCopy = structuredClone(shelf); // I added this to try
+
