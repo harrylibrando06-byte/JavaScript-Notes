@@ -64,3 +64,4 @@ const listOverdueDevices = (ledger, today) => {
 
 }
 
+// re-creation Book shelf version
