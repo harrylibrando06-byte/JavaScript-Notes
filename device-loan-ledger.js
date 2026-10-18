@@ -65,3 +65,11 @@ const listOverdueDevices = (ledger, today) => {
 }
 
 // re-creation Book shelf version
+const shelf = {
+  "QA76": {
+    title: "Eloquent JavaScript",
+    state: "Available",
+    reader: { name: "", email: "" },
+    returnBy: ""
+  }
+};
