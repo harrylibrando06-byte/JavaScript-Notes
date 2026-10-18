@@ -78,3 +78,17 @@ const shelfToText = (shelf) => shelf.JSON.stringify(shelf);
 const textToShelft = (shelf) => shelf.JSON.parse(shelfToText);
 const shelfDeepCopy = structuredClone(shelf); // I added this to try
 
+const borrowBook = (shelf, callCode, reader) => {
+  const clone = shelfDeepCopy;
+
+  if (!Object.hasOwn(shelf, callCode)) {
+    return { shelf, message: `${callCode} doesn't exist`}
+  };
+
+  clone[callCode].reader.name = '';
+  clone[callCode].reader.email = '';
+  clone[callCode].state = 'Borrowed';
+
+  return { clone, message: `${clone[callCode]} is already borrowed`}
+  
+}
