@@ -82,13 +82,28 @@ const borrowBook = (shelf, callCode, reader) => {
   const clone = shelfDeepCopy;
 
   if (!Object.hasOwn(shelf, callCode)) {
-    return { shelf, message: `${callCode} doesn't exist`}
+    return { shelf, message: `${callCode} doesn't exist`};
   };
 
   clone[callCode].reader.name = '';
   clone[callCode].reader.email = '';
   clone[callCode].state = 'Borrowed';
 
-  return { clone, message: `${clone[callCode]} is already borrowed`}
-  
+  return { clone, message: `${clone[callCode]} is already borrowed`};
+};
+
+const returnBook = (shelf, callCode) => {
+  const clone = shelfDeepCopy;
+
+  clone[callCode].name = '';
+  clone[callCode].email = '';
+  clone[callCode].returnBy = '';
+  clone[callCode].state = 'Available';
+
+  return { ledger, message: `${callCode} is available`}
 }
+
+const dateKey = (dateString) => {
+  const [year, month, day] = dateString.split('/');
+  return toNumber(year) * 10000 + toNumber(month) * 100 + toNumber(day);
+};
