@@ -36,7 +36,7 @@ const checkinDevice = (ledger, assetTag) => {
   copy[assetTag].dueDate = ""; 
   copy[assetTag].status = "CheckedIn";
 
-  return {ledger: copy, message: `tag is found: ${assetTag} asdf`} 
+  return {ledger: copy, message: `tag is found: ${assetTag}`} 
 }
 
 const toNumber = (dateString) => {
@@ -74,36 +74,47 @@ const shelf = {
   }
 };
 
-const shelfToText = (shelf) => shelf.JSON.stringify(shelf);
-const textToShelft = (shelf) => shelf.JSON.parse(shelfToText);
-const shelfDeepCopy = structuredClone(shelf); // I added this to try
+// const shelfToText = (shelf) => JSON.stringify(shelf);
+// const textToShelf = (shelf) => JSON.parse(shelfToText(shelf));
+// const shelfDeepCopy = structuredClone(shelf); // I added this to try
 
 const borrowBook = (shelf, callCode, reader) => {
-  const clone = shelfDeepCopy;
-
+  const clone = structuredClone(shelf);
+  
   if (!Object.hasOwn(shelf, callCode)) {
     return { shelf, message: `${callCode} doesn't exist`};
-  };
-
-  clone[callCode].reader.name = '';
-  clone[callCode].reader.email = '';
+  } else if (shelf[callCode].state === "Borrowed") {
+    return { shelf, message: `${shelf[callCode].title} is ${shelf[callCode].state}`}
+  } 
+  
+  clone[callCode].reader.name = reader.name;
+  clone[callCode].reader.email = reader.email;
   clone[callCode].state = 'Borrowed';
-
-  return { clone, message: `${clone[callCode]} is already borrowed`};
+  
+  return { clone, message: `${clone[callCode].title} is ${clone[callCode].state}`};
 };
 
 const returnBook = (shelf, callCode) => {
-  const clone = shelfDeepCopy;
+  const clone = structuredClone(shelf);
 
-  clone[callCode].name = '';
-  clone[callCode].email = '';
+  if (!Object.hasOwn(shelf, callCode)) {
+    return { shelf, message: `${callCode} doesn't exist`};
+  } else if (shelf[callCode].state !== 'Borrowed') {
+    return { shelf, message: `${shelf[callCode].title} is available`}
+  }
+  
+  clone[callCode].reader.name = '';
+  clone[callCode].reader.email = '';
   clone[callCode].returnBy = '';
   clone[callCode].state = 'Available';
 
-  return { ledger, message: `${callCode} is available`}
+  return { clone, message: `${callCode} is available`}
 }
 
 const dateKey = (dateString) => {
-  const [year, month, day] = dateString.split('/');
-  return toNumber(year) * 10000 + toNumber(month) * 100 + toNumber(day);
+  const toNumber = (dateString) => Number(dateString);
+
+  const [month, day, year] = dateString.split('/');
+  // return toNumber(year) * 10000 + toNumber(month) * 100 + toNumber(day);
+  return toNumber(month) * 100 + toNumber(day) + toNumber(year) * 10000;
 };
