@@ -1036,4 +1036,23 @@ const toNumber = (dateString) => {
   const [month, date, year] = dateString.split("/");
 
   return Number(year) * 10000 + Number(month) * 100 + Number(date);
+};
+
+const listOverdue = (ledger, today) => {
+  const todayNum = toNumber(today);
+  const overdue = [];
+  const devices = Object.values(ledger);
+
+  devices.forEach((device) => {
+    if (
+     ledger[assetTag].status === "CheckedOut" &&
+     toNumber(dueDate) < todayNum 
+    ) {
+      overdue.push(device);
+    };
+  });
+
+  devices.sort((first, second) => (first.toNumber(dueDate)) - (second.todayNum))
+
+  return overdue;
 }
