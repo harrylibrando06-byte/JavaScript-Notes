@@ -1003,7 +1003,7 @@ const equipmentLedger = {
 };
 
 const serializeLedger = (ledger) => JSON.stringify(ledger);
-const loadLedger = (json) => JSON.parse(serializeLedger(ledger));
+const loadLedger = (json) => JSON.parse(json);
 
 const checkOutDevice = (ledger, assetTag, borrower) => {
   if (!Object.hasOwn(ledger, assetTag)) {
@@ -1017,9 +1017,9 @@ const checkOutDevice = (ledger, assetTag, borrower) => {
   const clone = loadLedger(serializeLedger(ledger));
   clone[assetTag].borrower.name = borrower.name;
   clone[assetTag].borrower.email = borrower.email;
-  clone[assetTag].status = 'Borrowed';
+  clone[assetTag].status = 'CheckedOut';
 
-  return { ledger: copy, message: `${assetTag} I honestly don't know what to say here` };
+  return { ledger: clone, message: `${assetTag} I honestly don't know what to say here` };
 };
 
 const checkInDevice = (ledger, assetTag) => {
@@ -1027,9 +1027,10 @@ const checkInDevice = (ledger, assetTag) => {
 
   clone[assetTag].borrower.name = "";
   clone[assetTag].borrower.email = "";
+  clone[assetTag].dueDate = "";
   clone[assetTag].status = "CheckedIn";
 
-  return { ledger: copy, message: `includes ${assetTag}`};
+  return { ledger: clone, message: `includes ${assetTag}`};
 };
 
 const toNumber = (dateString) => {
@@ -1045,14 +1046,17 @@ const listOverdue = (ledger, today) => {
 
   devices.forEach((device) => {
     if (
-     ledger[assetTag].status === "CheckedOut" &&
-     toNumber(dueDate) < todayNum 
+     device.status === "CheckedOut" &&
+     toNumber(device.dueDate) < todayNum 
     ) {
       overdue.push(device);
     };
   });
 
-  devices.sort((first, second) => (first.toNumber(dueDate)) - (second.todayNum))
+  overdue.sort((first, second) => toNumber(first.dueDate) - (second.dueDate))
 
   return overdue;
-}
+};
+
+console.log(checkInDevice(equipmentLedger, "1"));
+console.log(listOverdue(equipmentLedger, "11/15/2025"));
