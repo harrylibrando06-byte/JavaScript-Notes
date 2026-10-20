@@ -1032,3 +1032,8 @@ const checkInDevice = (ledger, assetTag) => {
   return { ledger: copy, message: `includes ${assetTag}`};
 };
 
+const toNumber = (dateString) => {
+  const [month, date, year] = dateString.split("/");
+
+  return Number(year) * 10000 + Number(month) * 100 + Number(date);
+}
