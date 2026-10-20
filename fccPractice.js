@@ -1005,3 +1005,19 @@ const equipmentLedger = {
 const serializeLedger = (ledger) => JSON.stringify(ledger);
 const loadLedger = (json) => JSON.parse(serializeLedger(ledger));
 
+const checkOutDevice = (ledger, assetTag, borrower) => {
+  if (!Object.hasOwn(ledger, assetTag)) {
+    return { ledger, message: `${assetTag} doesn't exist`};
+  };
+
+  if (ledger[assetTag].status === "CheckedOut") {
+    return { ledger, message: `${assetTag} already ${ledger[assetTag].status}`};
+  };
+
+  const clone = loadLedger(serializeLedger(ledger));
+  clone[assetTag].borrower.name = borrower.name;
+  clone[assetTag].borrower.email = borrower.email;
+  clone[assetTag].status = 'Borrowed';
+
+  return { ledger: copy, message: `${assetTag} I honestly don't know what to say here` }
+}
