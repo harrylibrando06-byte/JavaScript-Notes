@@ -1019,5 +1019,16 @@ const checkOutDevice = (ledger, assetTag, borrower) => {
   clone[assetTag].borrower.email = borrower.email;
   clone[assetTag].status = 'Borrowed';
 
-  return { ledger: copy, message: `${assetTag} I honestly don't know what to say here` }
-}
+  return { ledger: copy, message: `${assetTag} I honestly don't know what to say here` };
+};
+
+const checkInDevice = (ledger, assetTag) => {
+  const clone = loadLedger(serializeLedger(ledger));
+
+  clone[assetTag].borrower.name = "";
+  clone[assetTag].borrower.email = "";
+  clone[assetTag].status = "CheckedIn";
+
+  return { ledger: copy, message: `includes ${assetTag}`};
+};
+
