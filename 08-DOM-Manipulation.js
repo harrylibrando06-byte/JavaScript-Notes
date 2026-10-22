@@ -28,3 +28,8 @@ Ancestor nodes are elements higher up in the DOM tree hierarchy than another ele
 Understanding these relationships is essential for manipulating and navigating the DOM tree with JavaScript. 
 
 */
+
+//How Do You Add and Remove Nodes from the DOM with appendChild() and removeChild()?
+//let parentNode;
+//parentNode.appendChild(newnode);
+
