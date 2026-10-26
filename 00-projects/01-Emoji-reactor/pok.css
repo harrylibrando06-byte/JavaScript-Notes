@@ -5,12 +5,13 @@
 }
 
 :root {
-  --light-grey: #efefef;
-  --white: #ffffff;
-  --very-dark-blue: #1a0a14;
-  --light-pink: #f9a8d4;
-  --very-light-pink: #fbcfe8;
-  --pink: #ec4899;
+  --bg-dark: #1a0a14;           /* page background */
+  --text-primary: #efefef;      /* main text (headings, emojis count) */
+  --text-white: #ffffff;        /* button text */
+  --accent-light: #f9a8d4;      /* button gradient top */
+  --accent-lighter: #fbcfe8;    /* button gradient bottom / highlights */
+  --accent-main: #ec4899;       /* borders, hover accents */
+  --accent-dark: #be185d;       /* darker hover, pressed states */
 }
 
 html, 
