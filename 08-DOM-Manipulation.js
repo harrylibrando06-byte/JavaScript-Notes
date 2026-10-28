@@ -33,3 +33,13 @@ Understanding these relationships is essential for manipulating and navigating t
 //let parentNode;
 //parentNode.appendChild(newnode);
 
+// Element selectors: Methods used to target and manipulate HTML elements
+                    // They allow you to select one or multiple HTML elements 
+                    // from the DOM (Document Object Model)
+
+//1. document.getElementById() // Element or Null
+//2. document.getElementByClassName() //HTML Collection
+//3. document.getElementByTagName() //HTML Collection 
+//4. document.querySelector() //Element or Null
+//5. document.querySelectorAll() //Nodelist
+
