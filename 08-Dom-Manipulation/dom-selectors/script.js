@@ -15,11 +15,6 @@ buttons.forEach((btn) => {
     console.log("success")
 });
 
-// const cardObj = [
-//     {instrument: "Flute", price: 500},
-//     {instrument: "Flute", price: 500},
-//     {instrument: "Flute", price: 500}
-// ]
 
 const instrumentsArr = [
   { category: "woodwinds", instrument: "Flute", price: 500 },
@@ -34,20 +29,45 @@ const instrumentsArr = [
   { category: "percussion", instrument: "Marimba", price: 3000 }
 ];
 
-let blankHtml = "";
 
 const instrumentsContainer = document.querySelector(".instruments-container");
+const selectInstrument = document.querySelector("select");
+let instrumentDocs = "";
 
-instrumentsArr.forEach(card => {
-     blankHtml += 
+instrumentsArr.forEach(instrument => {
+     instrumentDocs += 
     `
     <div class="card-container">
       <div class="card">
-        <h2>${card.instrument}</h2>
-        <p>$${card.price}</p>
+          <h2>${instrument.instrument}</h2>
+          <p>$${instrument.price}</p>
       </div>  
     </div>  
-    `
-})
-instrumentsContainer.innerHTML += blankHtml;
+    `;
+});
 
+instrumentsContainer.innerHTML += instrumentDocs;
+
+
+const instrFunc = (instrCtgr) => {
+  const instrument = 
+    instrCtgr === "all" ? instrumentsArr : 
+    instrumentsArr.filter(({category}) => category === instrCtgr);
+  
+  let intrHtml = "";
+  
+  instrument.forEach(item => {
+    intrHtml += `
+      <div class="card">
+        <h2>${item.instrument}</h2>
+        <p>$${item.price}</p>
+      </div> 
+    `;
+  });
+  
+  instrumentsContainer.innerHTML = intrHtml;
+};
+
+selectInstrument.addEventListener("change", () => {
+  instrFunc(selectInstrument.value) 
+});
