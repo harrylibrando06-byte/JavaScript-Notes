@@ -43,3 +43,50 @@ button {
     background-color: none;
     cursor: pointer;
 }
+
+.instruments {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0a0a23;
+    color: #ffffff;
+    gap: 1rem;
+}
+
+.instruments > h1 {
+    margin-top: 2rem;
+}
+
+.instruments > select {
+    width: 10rem;
+    padding: 8px;
+    border-radius: 7px;
+    transition: transform 0.3s ease;
+}
+
+.instruments > select:hover {
+    cursor: pointer;
+}
+
+.instruments-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card {
+    color: var(--dark-grey);
+    background-color: var(--white);
+    border: 2.5px solid var(--yellow);
+    padding: 1rem;
+    border-radius: 7px;
+}
+
+@media (max-width: 760px) {
+    .instruments-container {
+        flex-direction: column;
+    }
+}

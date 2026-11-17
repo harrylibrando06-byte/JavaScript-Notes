@@ -69,5 +69,5 @@ const instrFunc = (instrCtgr) => {
 };
 
 selectInstrument.addEventListener("change", () => {
-  instrFunc(selectInstrument.value) 
+  instrFunc(selectInstrument.value); 
 });
