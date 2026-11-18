@@ -71,3 +71,21 @@ const instrFunc = (instrCtgr) => {
 selectInstrument.addEventListener("change", () => {
   instrFunc(selectInstrument.value); 
 });
+
+/* Real tim Character count */
+const textArea = document.getElementById("textArea");
+const charCount = document.querySelector(".char-count");
+const timeP = document.querySelector(".timeP");
+
+textArea.addEventListener("input", (event) => {
+  // console.log("hatdog")
+  if (event.target.value.length > 50) {
+    timeP.style.color = "red";
+    event.target.value = textArea.value.slice(0, 50);
+  } else if (event.target.value.length === 50) {
+    timeP.style.color = "red";
+  } else {
+    timeP.style.color = "black";
+  }
+  charCount.innerHTML = event.target.value.length;
+});

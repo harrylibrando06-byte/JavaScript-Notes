@@ -90,3 +90,13 @@ button {
         flex-direction: column;
     }
 }
+
+/* Real time Character count */
+.rTCcount {
+    background-color: aquamarine;
+}
+
+.rTCcount > h1 {
+    background-color: #fdda78;
+    margin-bottom: 16px;
+}
