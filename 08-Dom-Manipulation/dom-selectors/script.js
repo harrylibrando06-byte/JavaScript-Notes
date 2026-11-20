@@ -92,4 +92,18 @@ textArea.addEventListener("input", (event) => {
 
 // lightBox viewer
 
+const galleryItem = document.querySelectorAll(".gallery-item");
+const lightBox = document.querySelector(".lightbox");
+const lightBoxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.getElementById("closeBtn");
 
+galleryItem.forEach(item => {
+  item.addEventListener("click", (event) => {
+    lightBox.style.display = "block";
+    lightBoxImg.src = event.target.src.replace("-thumbnail", "")
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightBox.style.display = "none";
+})

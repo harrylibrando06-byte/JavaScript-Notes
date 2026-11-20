@@ -100,3 +100,47 @@ button {
     background-color: #fdda78;
     margin-bottom: 16px;
 }
+
+/* lightBox viewer */
+.lightBoxSection {
+    background-color: #f8f9fa;
+}
+
+.lightBoxSection h1 {
+    margin-bottom: 3rem;
+}
+
+.gallery-item img {
+    width: 240px;
+    height: 300px;
+    margin: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.06);
+    cursor: pointer;
+}
+
+.lightbox  {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+}
+
+.lightbox button {
+    all: unset;
+    cursor: pointer;
+    background-color: #f8f9fa;
+    height: 10%;
+    top: 10;
+    left: 10;
+}
+
+.lightbox img {
+    width: 50%;
+    height: auto;
+}

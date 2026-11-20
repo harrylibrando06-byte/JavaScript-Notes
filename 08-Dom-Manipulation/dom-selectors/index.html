@@ -39,40 +39,24 @@
     </section>
 
     <section class="lightBoxSection">
-        <style>
-            :root {
-            --bg-dark: #0f0f1a;
-            --bg-light: #1a1a2e;
-            --overlay: rgba(10, 10, 20, 0.85);
-            --text: #e8e8f0;
-            --text-muted: #8888a0;
-            --accent: #f5a623;
-            --accent-hover: #ffc04d;
-            --border: #2a2a40;
-            }
-
-            .lightBoxSection {
-                background-color: var(--bg-dark);
-            }
-
-            .lightBoxSection > img {
-                height: auto;
-                width: 3rem;
-            }
-        </style>
 
         <h1>Landscape paintings</h1>
 
-        <a>
-            <img src="https://cdn.freecodecamp.org/curriculum/labs/stonehenge-thumbnail.jpg" alt="painting">
-        </a>
-        <a>
-            <img src="./734509020446201519.jpg" alt="painting">
-        </a>
-        <a>
-            <img src="./739012620151586113.jpg" alt="painting">
-        </a>
-
+        <div class="gallery">
+            <a class="gallery-item">
+                <img src="./stonehenge-thumbnail.jpg">
+            </a>
+            <a class="gallery-item">
+                <img src="./storm-thumbnail.jpg">
+            </a>
+            <a class="gallery-item">
+                <img src="./trees-thumbnail.jpg">
+            </a>
+        </div>
+        <div class="lightbox">
+            <button id="closeBtn">&times;</button>
+            <img class="lightbox-img">
+        </div>
     </section>
 </body>
 </html>
