@@ -89,3 +89,5 @@ textArea.addEventListener("input", (event) => {
   }
   charCount.innerHTML = event.target.value.length;
 });
+
+// Museum
