@@ -99,10 +99,16 @@ const closeBtn = document.getElementById("closeBtn");
 
 galleryItem.forEach(item => {
   item.addEventListener("click", (event) => {
-    lightBox.style.display = "block";
+    lightBox.style.display = "flex";
     lightBoxImg.src = event.target.src.replace("-thumbnail", "")
   });
 });
+
+lightBox.addEventListener("click", (event) => {
+  if (event.target === lightBox) {
+    lightBox.style.display = "none";
+  }
+})
 
 closeBtn.addEventListener("click", () => {
   lightBox.style.display = "none";
