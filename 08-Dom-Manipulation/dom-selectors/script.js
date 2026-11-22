@@ -54,3 +54,13 @@ select.addEventListener("change", (event) => {
   instrCardFunc(select.value);
 });
 
+// Real time character counter
+const textArea = document.querySelector("#textArea");
+const charCount = document.querySelector(".char-count");
+const timeP = document.querySelector(".timeP");
+
+textArea.addEventListener("input", (event) => {
+  let count = 0;
+   count + event.target.length;
+   charCount.innerHTML = count;
+})
