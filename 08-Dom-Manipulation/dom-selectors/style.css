@@ -46,6 +46,8 @@ button {
     cursor: pointer;
 }
 
+/* instruments */
+
 .instruments {
     display: flex;
     justify-content: flex-start;
