@@ -66,4 +66,25 @@ textArea.addEventListener("input", (event) => {
   }
 
   charCount.innerHTML = event.target.value.length;
+});
+
+// light box
+const galleryItem = document.querySelectorAll(".gallery-item");
+const lightBox = document.querySelector(".lightbox");
+const lightBoxImg = document.querySelector(".lightbox-img");
+const closeBtn = document.querySelector("#closeBtn");
+
+galleryItem.forEach(item => {
+  item.addEventListener("click", (event) => {
+    lightBox.style.display = "flex";
+    lightBoxImg.src = event.target.src.replace("-thumbnail", "");
+  });
+});
+
+lightBox.addEventListener("click", (event) => {
+  lightBox.style.display = "none";
+});
+
+closeBtn.addEventListener("click", () => {
+  lightBox.style.display = "none";
 })
