@@ -3,7 +3,7 @@ const favIcon = document.querySelectorAll(".fav-icon");
 
 favIcon.forEach(icon => {
   icon.addEventListener("click", (event) => {
-    event.target.classList.toggle('filled');
+    event.target.classList.toggle('filled'); 
     event.target.innerHTML = "&#10084;";
   })
 })
@@ -60,7 +60,10 @@ const charCount = document.querySelector(".char-count");
 const timeP = document.querySelector(".timeP");
 
 textArea.addEventListener("input", (event) => {
-  let count = 0;
-   count + event.target.length;
-   charCount.innerHTML = count;
+  if (textArea.value.length > 50) {
+    timeP.style.color = "red";
+    textArea.value = event.target.value.slice(0, 50);
+  }
+
+  charCount.innerHTML = event.target.value.length;
 })
